@@ -11,5 +11,5 @@ Why all this effort? Because I believe that well-crafted visuals are a (the?) ke
 
 |    |    |    |
 | -- | -- | -- |
-| <img src="code/democracies-as-of-2020.png" width="200"> | <img src="https://janajarecki.com/wp-content/uploads/2022/08/521.png" width="200">  | <img src="code/democracies-as-of-2020.png" width="200"> |
+| <img src="code/democracies-as-of-2020.png" width="200"> | <img src="https://janajarecki.com/wp-content/uploads/2022/08/521.png" width="200">  | <img src="https://github.com/JanaJarecki/Risk-preferences-and-risk-perception-affect-the-acceptance-of-digital-contact-tracing/blob/master/analyses/figures/fig_accept_index_mcmc_areas_no_social.pdf" width="200"> |
 | Features of Democracies in 2020 <br> [View Code](code/democracies-as-of-2020.R) | Major Depression Symptoms by Scale <br> [No Code] | Features of Democracies in 2020 <br> [View Code](code/democracies-as-of-2020.R) |
