@@ -1,9 +1,11 @@
-data-viz-sankey-notebook_files
-data-viz-notebook_files
-health-data
-src
-tidy-tuesday
+# ignore everything
 *
+
+# include
 !.gitignore
-# RDS data files
-*.rds
+
+# specific inclusion for folders
+!code/
+code/*
+!code/democracies-as-of-2020.png
+!code/democracies-as-of-2020.R
