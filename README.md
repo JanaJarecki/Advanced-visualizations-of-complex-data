@@ -1,2 +1,6 @@
 # test-data-viz-repo
-![Global Democratic Countries as of 2020](https://github.com/JanaJarecki/test-data-viz-repo/blob/main/code/democracies-as-of-2020.png)
+
+
+|    |    |    |
+| -- | -- | -- |
+| <img width="90%" src="code/democracies-as-of-2020.png"> <br> Features of Democracies in 2020 <br> [Link to Code](code/democracies-as-of-2020.R) | <img width="90%" src="code/democracies-as-of-2020.png"> <br> Features of Democracies in 2020 <br> [Link to Code](code/democracies-as-of-2020.R) | <img width="90%" src="code/democracies-as-of-2020.png"> <br> Features of Democracies in 2020 <br> [Link to Code](code/democracies-as-of-2020.R) |
