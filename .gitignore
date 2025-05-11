@@ -1,11 +1,5 @@
-# ignore everything
-*
-
 # include
 !.gitignore
 
-# specific inclusion for folders
-!code
-code/**
-!code/democracies-as-of-2020.png
-!code/democracies-as-of-2020.R
+# ignore huge data size
+data/google_analytics_sample.RDS
