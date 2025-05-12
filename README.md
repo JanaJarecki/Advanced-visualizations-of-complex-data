@@ -2,12 +2,13 @@
 
 Since 2012, I've been fascinated by the power of clear, effective visuals, whether untangling **complex ML model outputs** or illustrating **simple data stories**.
 
-### Visualization Principles I Use
-Code-first | Psychology | Vision Science | Graph Accessibility | Grammar of Graphics | Graphic Design
+### Principles in my Work
 
+Code-first | Psychological Knowledge | Vision Science | Graph Accessibility | Grammar of Graphics | Graphic Design
+<be><be>
 <details>
 
-<summary>Read more about the my principles</summary>
+*<summary>Read more about the principles</summary>*
 
 You'll find my visualizations are **code-first**, which means they're agile and ready to update as the data evolves. I bring my **cognitive** science domain **knowledge** to this - understanding what makes a graph work for people based on evidence on how we read visuals (like research by [Garcia-Retamero et al, 2017](https://oxfordre.com/communication/display/10.1093/acrefore/9780190228613.001.0001/acrefore-9780190228613-e-302)) and making sure they're accessible (color-blind friendly, [Birch, 2012](https://pubmed.ncbi.nlm.nih.gov/22472762/)).
 
