@@ -18,7 +18,7 @@ Why all this effort? Because I believe that well-crafted visuals are a (the?) ke
 
 </details>
 
-### Example Visualizations
+### Examples of my Data Visualizations
 
 
 |       |       |       |
