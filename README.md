@@ -23,5 +23,7 @@ Why all this effort? Because I believe that well-crafted visuals are a (the?) ke
 
 |       |       |       |
 | :---: | :---: | :---: |
-| <img src="visualizations/democracies-as-of-2020.png" width="200"> | <img src="https://janajarecki.com/wp-content/uploads/2022/08/521.png" width="200">  | <img src="visualizations/iso-country-codes.png" width="200"> |
-| Features of Democracies in 2020 <br> [View Code](code/democracies-as-of-2020.R) | Major Depression Symptoms by Scale <br> [No Code] | ISO Country Codes <br> [View Code](code/iso-country-codes.R) |
+| <img src="visualizations/democracies-as-of-2020.png" width="200"> | <img src="https://janajarecki.com/wp-content/uploads/2022/08/521.png" width="200">  |  |
+| Properties of Democracies<br>in 2020 <br> [View Code](code/democracies-as-of-2020.R) | Major Depression Symptoms<br>by Clinical Scale | |
+| <img src="visualizations/peoples-vaccination-decisions.png" width="200"> | <img src="visualizations/iso-country-codes.png" width="200"> | |
+| Vaccination Decision Making<br>Features <br> [View Code](code/peoples-vaccination-decisions.R) | ISO Country Codes <br> [View Code](code/iso-country-codes.R) | |
