@@ -3,3 +3,6 @@
 
 # ignore huge data size
 data/google_analytics_sample.RDS
+
+# R files
+.Rhistory
