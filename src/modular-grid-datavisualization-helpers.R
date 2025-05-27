@@ -5,15 +5,27 @@
 # Author: Jana B Jarecki
 # ========================================================================
 
+# ensures `pacman` available, automatizing package management, loads packages
+if (!require(pacman)) install.packages("pacman")
+pacman::p_load(
+  patchwork, # combine plots
+  stringr, # wrap strings, this is a hack
+  grid # to call gpar in the string wrapping
+)
 
 #' Write a text into a modular grid cell
 #'
 #' @param text A string
-#' @param align A two-character indicator with `"bl"` = bottom-left, `"br"` =bottom-right, `"tl"` = top-left, and `"tr"` =top-right
+#' @param align A two-character position vector: `"bl"` = bottom-left, `"br"` = bottom-right, `"tl"` = top-left, and `"tr"` = top-right
 #' @param ... optional arguments
 #' @param wrap A numeric value with the number of characters after which to wrap lines in the cell
 #'
-#' @return
+#' @return A wrapped_patch object, see patchwork::wrap_elements()
+#' 
+#' @importFrom stringr str_wrap
+#' @importFrom patchwork wrap_elements
+#' @importFrom grid gpar
+#' 
 #' @export
 #'
 #' @examples
@@ -61,24 +73,53 @@ GrobModularGrid <- function(text, align = c("bl", "br", "tl", "tr"),
 #' @param par (optional) graphics parameters like bg for background colors
 #'
 #' @return The plot in the grid layout
+#' 
+#' @importFrom patchwork wrap_plots, plot_layout, plot_annotation
 #'
 #' @examples
-ModularGrid <- function(patch, design, pagesize = NULL, guttersize = NULL,
+ModularGrid <- function(plots, design, pagesize = NULL, guttersize = NULL,
                         pagemargins = NULL, fieldsize = NULL, unit = "mm", 
-                        par = NULL) {
+                        par = NULL, trace = FALSE) {
   
-  # Set default values for the page, field, and gutter size
+    # Set default values for the page, field, and gutter size
   if (!length(pagesize)) pagesize <- .DefaultGridsizes("pagesize")
   if (!length(fieldsize)) fieldsize <- .DefaultGridsizes("fieldsize")
   if (!length(guttersize)) guttersize <- .DefaultGridsizes("guttersize")
-  if (!length(pagemargins)) pagemargins <- .CalculatePagemargins(design, pagesize, fieldsize, guttersize)
-
+  if (!length(pagemargins)) pagemargins <- .CalculatePagemargins(design, 
+                                                                 pagesize, 
+                                                                 fieldsize, 
+                                                                 guttersize)
+  
+  # Checks
+  stopifnot(
+    "`plots` must be a list, but isn't." = is.list(plots),
+    "`design` must be a string, but isn't." = is.character(design),
+    "`pagesize` must be numeric, but isn't." = is.numeric(pagesize),
+    "`fieldsize` must be numeric, but isn't." = is.numeric(fieldsize),
+    "`guttersize` must be numeric, but isn't." = is.numeric(guttersize),
+    "`pagemargins` must be numeric, but isn't." = is.numeric(pagemargins),
+    "`pagesize` needs length 2, but isn't." = length(pagesize) == 2,
+    "`fieldsize` needs length 2, but isn't." = length(fieldsize) == 2,
+    "`guttersize` needs length 2, but isn't." = length(guttersize) == 2,
+    "`pagemargins` needs length 4, but isn't." = length(pagemargins) == 4
+  )
+  
+  if (trace == TRUE) {
+    cat(
+      " Field size", paste(fieldsize, collapse = " x "), "\n",
+      "Gutter size", paste(guttersize, collapse = " x "), "\n",
+      "Page margins", paste(pagemargins, collapse = " x "), "\n"
+    )
+  }
   # arrange the patchwork
-  out <- wrap_plots(patch, design = design) + 
+  out <- wrap_plots(
+      plots, 
+      design = design) + 
     plot_layout(
       design = design, 
-      widths = (fieldsize["w"] + guttersize)["w"],
-      heights = (fieldsize["h"] + guttersize)["h"]) &
+      widths = fieldsize["w"] + guttersize["w"],
+      heights = fieldsize["h"] + guttersize["h"]
+      ) &
     theme(
       plot.margin = margin(
         b = guttersize["h"], 
@@ -92,8 +133,8 @@ ModularGrid <- function(patch, design, pagesize = NULL, guttersize = NULL,
         plot.margin = margin(
           r = pagemargins["r"],
           l = pagemargins["l"],
-          t = pagemargins["t"] * 0.9,
-          b = pagemargins["b"] * 1.1, 
+          t = pagemargins["t"],
+          b = pagemargins["b"], 
           unit = unit)
       ))
 }
@@ -108,7 +149,7 @@ ModularGrid <- function(patch, design, pagesize = NULL, guttersize = NULL,
   # ciceros to mm
   .cicero = 4.51165812456 # mm
   # 1 points to mm,
-  .point = 0.35145980 # mm^
+  .point = 0.35145980 # mm
   
   # single module/field/box, w x h:
   fieldsize <- c(w = 8 * .cicero + 10 * .point, 
@@ -143,6 +184,8 @@ ModularGrid <- function(patch, design, pagesize = NULL, guttersize = NULL,
       t = (pagesize - contentarea)[["h"]] / 2,
       b = (pagesize - contentarea)[["h"]] / 2 - guttersize[["h"]]
     )
+  pagemargins[["t"]] <- pagemargins[["t"]] * .9
+  pagemargins[["b"]] <- pagemargins[["b"]] * 1.1
   return(pagemargins)
 }
 
