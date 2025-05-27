@@ -20,12 +20,12 @@ Why all this effort? Because well-crafted visuals are key to understanding compl
 
 ### Examples of my Data Visualizations
 
-| Vaccination Decision<br>Features in 26'700 People | Major Depression<br>Symptoms on 52 Clinical Scales |  Properties of<br>World Democracies in 2020 |
+| Sparse Bayesian Model<br>Covid-10 Digital Health | Vaccination Decision<br>Features in 26'700 People |  Properties of<br>World Democracies in 2020 |
 | :---: | :---: | :---: |
-<img src="visualizations/peoples-vaccination-decisions.png" width="200"> | <img src="https://janajarecki.com/wp-content/uploads/2022/08/521.png" width="200"> | <img src="visualizations/democracies-as-of-2020.png" width="200">   |
-|  [view code](code/peoples-vaccination-decisions.R) | [Fried (2016) publication](https://pubmed.ncbi.nlm.nih.gov/27792962/) | [view code](code/democracies-as-of-2020.R) | 
+| <img src="visualizations/covid-19-digital-health.png" width="200"> | <img src="visualizations/peoples-vaccination-decisions.png" width="200"> | <img src="visualizations/democracies-as-of-2020.png" width="200">   |
+| [view code](code/covid-19-digital-health.R) | [view code](code/peoples-vaccination-decisions.R) | [view code](code/democracies-as-of-2020.R) | 
 
-| ISO Country Codes |
-| :---: |
-| <img src="visualizations/iso-country-codes.png" width="200"> |
-| [view code](code/iso-country-codes.R) |
+| Major Depression<br>Symptoms on 52 Clinical Scales | ISO Country Codes |
+| :---: | :---: |
+| <img src="https://janajarecki.com/wp-content/uploads/2022/08/521.png" width="200"> | <img src="visualizations/iso-country-codes.png" width="200"> |
+| [Fried (2016) publication](https://pubmed.ncbi.nlm.nih.gov/27792962/) | [view code](code/iso-country-codes.R) |
